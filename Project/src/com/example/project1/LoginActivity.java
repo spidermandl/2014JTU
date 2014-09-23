@@ -73,7 +73,7 @@ public class LoginActivity extends Activity
 			imageView = new ImageView(this);
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					50, 6);
-			params.setMarginEnd(20);
+			//params.setMarginEnd(20);
 			imageView.setLayoutParams(params);
 			// imageView.setPadding(20, 5, 20, 5);
 			imageViews[i] = imageView;

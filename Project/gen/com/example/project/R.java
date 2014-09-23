@@ -18,20 +18,38 @@ public final class R {
         public static final int icon1=0x7f020004;
         public static final int icon2=0x7f020005;
         public static final int icon3=0x7f020006;
-        public static final int nofocus=0x7f020007;
-        public static final int u143=0x7f020008;
-        public static final int u147=0x7f020009;
+        public static final int logo_qq=0x7f020007;
+        public static final int logo_sinaweibo=0x7f020008;
+        public static final int logo_wechat=0x7f020009;
+        public static final int nofocus=0x7f02000a;
+        public static final int u143=0x7f02000b;
+        public static final int u147=0x7f02000c;
+        public static final int u186=0x7f02000d;
+        public static final int u190_line=0x7f02000e;
+        public static final int u191=0x7f02000f;
+        public static final int u193=0x7f020010;
     }
     public static final class id {
-        public static final int adv_pager=0x7f060000;
-        public static final int go=0x7f060002;
-        public static final int iv=0x7f060004;
-        public static final int reg=0x7f060003;
-        public static final int viewGroup=0x7f060001;
+        public static final int adv_pager=0x7f060006;
+        public static final int back=0x7f060000;
+        public static final int finished=0x7f060004;
+        public static final int go=0x7f060008;
+        public static final int iv=0x7f06000b;
+        public static final int login=0x7f06000a;
+        public static final int password=0x7f060002;
+        public static final int password2=0x7f060003;
+        public static final int progressBar1=0x7f060005;
+        public static final int reg=0x7f060009;
+        public static final int username=0x7f060001;
+        public static final int viewGroup=0x7f060007;
     }
     public static final class layout {
-        public static final int login=0x7f030000;
-        public static final int logo=0x7f030001;
+        public static final int finishregist=0x7f030000;
+        public static final int loading=0x7f030001;
+        public static final int login=0x7f030002;
+        public static final int login2=0x7f030003;
+        public static final int logo=0x7f030004;
+        public static final int success=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
