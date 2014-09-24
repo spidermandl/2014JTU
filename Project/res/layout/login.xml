@@ -51,7 +51,7 @@
         <Button
             android:layout_width="120dp"
             android:layout_height="38dp"
-            android:id="@+id/reg"
+           android:onClick="register"
              android:background="@drawable/button_click"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
