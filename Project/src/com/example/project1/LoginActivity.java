@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.hardware.Camera.Size;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -24,6 +24,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.project.R;
+
+
 
 public class LoginActivity extends Activity
 {
@@ -43,6 +45,13 @@ public class LoginActivity extends Activity
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.login);
 		initViewPager();
+	}
+	
+	
+	
+	public void register(View v){
+		Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+		startActivity(intent);
 	}
 
 	@SuppressLint("NewApi")
