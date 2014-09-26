@@ -18,7 +18,7 @@
            
         </activity>
         <activity 
-            android:name="com.example.project1.LoginActivity"
+            android:name="com.example.project1.GuideActivity"
             ></activity>
         <activity 
           android:name="com.example.project1.Login2Activity"

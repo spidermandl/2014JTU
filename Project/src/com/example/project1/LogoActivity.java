@@ -50,7 +50,7 @@ public class LogoActivity extends Activity
 			public void onAnimationEnd(Animation animation)
 			{
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(LogoActivity.this, LoginActivity.class);
+				Intent intent = new Intent(LogoActivity.this, GuideActivity.class);
 				startActivity(intent);
 			}
 		});

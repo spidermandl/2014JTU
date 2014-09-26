@@ -23,7 +23,6 @@ public final class R {
     }
     public static final class drawable {
         public static final int button_click=0x7f020000;
-<<<<<<< HEAD
         public static final int focus=0x7f020001;
         public static final int huanyingye=0x7f020002;
         public static final int ic_launcher=0x7f020003;
