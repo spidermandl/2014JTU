@@ -1,12 +1,11 @@
 package com.example.project1;
 
-import com.example.project.R;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity3 extends Activity{
@@ -24,8 +23,8 @@ public class MainActivity3 extends Activity{
 			@Override
 			public void onClick(View v) {
 				
-				/*Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
-				startActivity(intent);*/
+				Intent intent=new Intent(getApplicationContext(), FinishRegistActivity.class);
+				startActivity(intent);
 				
 			}
 		});

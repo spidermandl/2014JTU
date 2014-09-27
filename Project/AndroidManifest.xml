@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.project"
+    package="com.example.project1"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -31,35 +31,36 @@
               >
         </activity>
          <activity 
-          android:name="com.example.project1.FinishRegistActivity"
+          android:name=".FinishRegistActivity"
           android:label="@string/app_name"
               >
-               <intent-filter>
+               
+        </activity>
+
+         <activity 
+          android:name=".SuccessActivity"
+          android:label="@string/app_name"
+              >
+        </activity>
+        <activity 
+            android:name=".LoginActivity"
+            >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-         <activity 
-          android:name="com.example.project1.SuccessActivity"
-          android:label="@string/app_name"
-              >
-        </activity>
-=======
         <activity 
-            android:name="com.example.project1.LoginActivity"
+            android:name=".MainActivity"
             ></activity>
         <activity 
-            android:name="com.example.project1.MainActivity"
+            android:name=".MainActivity2"
             ></activity>
         <activity 
-            android:name="com.example.project1.MainActivity2"
+            android:name=".MainActivity3"
             ></activity>
-        <activity 
-            android:name="com.example.project1.MainActivity3"
-            ></activity>
->>>>>>> 08fec012dcbe260e7de1dc9c5bc38b8fafeb0399
+
     </application>
 
 </manifest>

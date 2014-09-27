@@ -23,8 +23,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.project.R;
-
 
 
 public class LoginActivity extends Activity

@@ -10,8 +10,6 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageView;
 
-import com.example.project.R;
-
 public class LogoActivity extends Activity
 {
 
