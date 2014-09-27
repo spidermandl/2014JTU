@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.project1"
+    package="com.minor.water"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -13,37 +13,37 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
           <activity
-            android:name="com.example.project1.LogoActivity"
+            android:name="com.minor.water.LogoActivity"
             android:label="@string/app_name" >
            
         </activity>
         <activity 
-            android:name="com.example.project1.GuideActivity"
+            android:name="com.minor.water.GuideActivity"
             ></activity>
         <activity 
-          android:name="com.example.project1.Login2Activity"
+          android:name="com.minor.water.Login2Activity"
           android:label="@string/app_name"
               >
         </activity>
         <activity 
-          android:name="com.example.project1.LoginLoadingActivity"
+          android:name="com.minor.water.LoginLoadingActivity"
           android:label="@string/app_name"
               >
         </activity>
          <activity 
-          android:name=".FinishRegistActivity"
+          android:name="com.minor.water.FinishRegistActivity"
           android:label="@string/app_name"
               >
                
         </activity>
 
          <activity 
-          android:name=".SuccessActivity"
+          android:name="com.minor.water.SuccessActivity"
           android:label="@string/app_name"
               >
         </activity>
         <activity 
-            android:name=".LoginActivity"
+            android:name="com.minor.water.LoginActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,13 +52,13 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name=".MainActivity"
+            android:name="com.minor.water.MainActivity"
             ></activity>
         <activity 
-            android:name=".MainActivity2"
+            android:name="com.minor.water.MainActivity2"
             ></activity>
         <activity 
-            android:name=".MainActivity3"
+            android:name="com.minor.water.MainActivity3"
             ></activity>
 
     </application>
