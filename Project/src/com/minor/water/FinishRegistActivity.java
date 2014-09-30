@@ -3,10 +3,12 @@ package com.minor.water;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ProgressBar;
 
 public class FinishRegistActivity extends Activity implements OnClickListener {
 
@@ -16,6 +18,7 @@ public class FinishRegistActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.finishregist);
 		findViewById(R.id.finished).setOnClickListener(this);
+		
 	}
 
 	@Override

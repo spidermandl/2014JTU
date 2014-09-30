@@ -1,6 +1,5 @@
 package com.minor.water;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,35 +24,36 @@ public class MainActivity2 extends Activity {
 	private ImageView image2;
 	private EditText edit;
 	private Button btn;
-	
-	Handler handler=new Handler(){
-		
+
+	Handler handler = new Handler() {
+
 		public void handleMessage(android.os.Message msg) {
-			
-			if((Integer)msg.obj!=0){
-				text2.setText("接收短信大约需要"+msg.obj+"s");
-			}else{
+
+			if ((Integer) msg.obj != 0) {
+				text2.setText("接收短信大约需要" + msg.obj + "s");
+			} else {
 				text2.setText("点击重播");
 				text2.setOnClickListener(new OnClickListener() {
-					
+
 					@Override
 					public void onClick(View v) {
-						
-						 new Thread(new Runnable() {
-								
-								@Override
-								public void run() {
-					                 int i=30;
-									while(true){
-										i--;
-										if(i>=0){
-										Message msg=new Message();
-										msg.obj=i;
-										handler.sendMessage(msg);}
-										SystemClock.sleep(1000);
+
+						new Thread(new Runnable() {
+
+							@Override
+							public void run() {
+								int i = 30;
+								while (true) {
+									i--;
+									if (i >= 0) {
+										Message msg = new Message();
+										msg.obj = i;
+										handler.sendMessage(msg);
 									}
+									SystemClock.sleep(1000);
 								}
-							}).start();
+							}
+						}).start();
 					}
 				});
 			}
@@ -65,10 +65,10 @@ public class MainActivity2 extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main2);
-		
+
 		Intent intent = getIntent();
 		String extra = intent.getStringExtra(MainActivity.CL);
-		
+
 		text1 = (TextView) findViewById(R.id.textView1);
 		text2 = (TextView) findViewById(R.id.textView2);
 		image = (ImageView) findViewById(R.id.iv);
@@ -77,7 +77,7 @@ public class MainActivity2 extends Activity {
 		 * 清空按鈕
 		 */
 		image2.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				edit.setText("");
@@ -85,43 +85,46 @@ public class MainActivity2 extends Activity {
 		});
 		edit = (EditText) findViewById(R.id.editText1);
 		btn = (Button) findViewById(R.id.button1);
-		text1.setText("我们已经发送了验证码到你的手机:"+extra);
+		text1.setText("我们已经发送了验证码到你的手机:" + extra);
 		image.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Intent intent=new Intent(getApplicationContext(), MainActivity.class);
-				startActivity(intent);				
+				Intent intent = new Intent(getApplicationContext(),
+						MainActivity.class);
+				startActivity(intent);
 			}
 		});
-        btn.setOnClickListener(new OnClickListener() {
-	
-	@Override
-	public void onClick(View v) {
-		String text = edit.getText().toString().trim();
-		if(TextUtils.isEmpty(text)){
-			Toast.makeText(getApplicationContext(), "请输入验证码", 0).show();
-			return;
-		}
-		if(!"1234".equals(text)){
-			Toast.makeText(getApplicationContext(), "验证码不正确", 0).show();
-		}else{
-			Intent intent=new Intent(getApplicationContext(), MainActivity3.class);
-			startActivity(intent);
-		}
-	}
-});	
-        new Thread(new Runnable() {
-			
+		btn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				String text = edit.getText().toString().trim();
+				if (TextUtils.isEmpty(text)) {
+					Toast.makeText(getApplicationContext(), "请输入验证码", 0).show();
+					return;
+				}
+				if (!"1234".equals(text)) {
+					Toast.makeText(getApplicationContext(), "验证码不正确", 0).show();
+				} else {
+					Intent intent = new Intent(getApplicationContext(),
+							MainActivity3.class);
+					startActivity(intent);
+				}
+			}
+		});
+		new Thread(new Runnable() {
+
 			@Override
 			public void run() {
-                 int i=30;
-				while(true){
+				int i = 30;
+				while (true) {
 					i--;
-					if(i>=0){
-					Message msg=new Message();
-					msg.obj=i;
-					handler.sendMessage(msg);}
+					if (i >= 0) {
+						Message msg = new Message();
+						msg.obj = i;
+						handler.sendMessage(msg);
+					}
 					SystemClock.sleep(1000);
 				}
 			}

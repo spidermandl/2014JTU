@@ -22,11 +22,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-
-
-public class LoginActivity extends Activity
-{
+/**
+ * 
+ * @author LiYang
+ * 
+ *
+ */
+public class LoginActivity extends Activity {
 	private ImageView[] imageViews = null;
 	private ImageView imageView = null;
 	private ViewPager advPager = null;
@@ -34,27 +36,21 @@ public class LoginActivity extends Activity
 	private boolean isContinue = true;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState)
-	{
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		this.getWindow().setFlags(
-				WindowManager.LayoutParams.FLAG_FULLSCREEN,
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.login);
 		initViewPager();
 	}
-	
-	
-	
-	public void register(View v){
-		Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+
+	public void register(View v) {
+		Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 		startActivity(intent);
 	}
 
-	@SuppressLint("NewApi")
-	private void initViewPager()
-	{
+	private void initViewPager() {
 		advPager = (ViewPager) findViewById(R.id.adv_pager);
 		ViewGroup group = (ViewGroup) findViewById(R.id.viewGroup);
 
@@ -75,36 +71,29 @@ public class LoginActivity extends Activity
 		// 对imageviews进行填充
 		imageViews = new ImageView[advPics.size()];
 		// 小图标
-		for (int i = 0; i < advPics.size(); i++)
-		{
+		for (int i = 0; i < advPics.size(); i++) {
 			imageView = new ImageView(this);
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					50, 6);
-			//params.setMarginEnd(20);
+			// params.setMarginEnd(20);
 			imageView.setLayoutParams(params);
 			// imageView.setPadding(20, 5, 20, 5);
 			imageViews[i] = imageView;
-			if (i == 0)
-			{
+			if (i == 0) {
 				imageViews[i].setBackgroundResource(R.drawable.focus);
-			} else
-			{
-				imageViews[i]
-						.setBackgroundResource(R.drawable.nofocus);
+			} else {
+				imageViews[i].setBackgroundResource(R.drawable.nofocus);
 			}
 			group.addView(imageViews[i]);
 		}
 
 		advPager.setAdapter(new AdvAdapter(advPics));
 		advPager.setOnPageChangeListener(new GuidePageChangeListener());
-		advPager.setOnTouchListener(new OnTouchListener()
-		{
+		advPager.setOnTouchListener(new OnTouchListener() {
 
 			@Override
-			public boolean onTouch(View v, MotionEvent event)
-			{
-				switch (event.getAction())
-				{
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 				case MotionEvent.ACTION_MOVE:
 					isContinue = false;
@@ -119,16 +108,12 @@ public class LoginActivity extends Activity
 				return false;
 			}
 		});
-		new Thread(new Runnable()
-		{
+		new Thread(new Runnable() {
 
 			@Override
-			public void run()
-			{
-				while (true)
-				{
-					if (isContinue)
-					{
+			public void run() {
+				while (true) {
+					if (isContinue) {
 						viewHandler.sendEmptyMessage(what.get());
 						whatOption();
 					}
@@ -138,63 +123,47 @@ public class LoginActivity extends Activity
 		}).start();
 	}
 
-	private void whatOption()
-	{
+	private void whatOption() {
 		what.incrementAndGet();
-		if (what.get() > imageViews.length - 1)
-		{
-			
-			
+		if (what.get() > imageViews.length - 1) {
+
 		}
-		try
-		{
+		try {
 			Thread.sleep(5000);
-		} catch (InterruptedException e)
-		{
+		} catch (InterruptedException e) {
 
 		}
 	}
 
-	private final Handler viewHandler = new Handler()
-	{
+	private final Handler viewHandler = new Handler() {
 
 		@Override
-		public void handleMessage(Message msg)
-		{
+		public void handleMessage(Message msg) {
 			advPager.setCurrentItem(msg.what);
 			super.handleMessage(msg);
 		}
 
 	};
 
-	private final class GuidePageChangeListener implements
-			OnPageChangeListener
-	{
+	private final class GuidePageChangeListener implements OnPageChangeListener {
 
 		@Override
-		public void onPageScrollStateChanged(int arg0)
-		{
+		public void onPageScrollStateChanged(int arg0) {
 
 		}
 
 		@Override
-		public void onPageScrolled(int arg0, float arg1, int arg2)
-		{
+		public void onPageScrolled(int arg0, float arg1, int arg2) {
 
 		}
 
 		@Override
-		public void onPageSelected(int arg0)
-		{
+		public void onPageSelected(int arg0) {
 			what.getAndSet(arg0);
-			for (int i = 0; i < imageViews.length; i++)
-			{
-				imageViews[arg0]
-						.setBackgroundResource(R.drawable.focus);
-				if (arg0 != i)
-				{
-					imageViews[i]
-							.setBackgroundResource(R.drawable.nofocus);
+			for (int i = 0; i < imageViews.length; i++) {
+				imageViews[arg0].setBackgroundResource(R.drawable.focus);
+				if (arg0 != i) {
+					imageViews[i].setBackgroundResource(R.drawable.nofocus);
 				}
 			}
 
@@ -202,61 +171,51 @@ public class LoginActivity extends Activity
 
 	}
 
-	private final class AdvAdapter extends PagerAdapter
-	{
+	private final class AdvAdapter extends PagerAdapter {
 		private List<View> views = null;
 
-		public AdvAdapter(List<View> views)
-		{
+		public AdvAdapter(List<View> views) {
 			this.views = views;
 		}
 
 		@Override
-		public void destroyItem(View arg0, int arg1, Object arg2)
-		{
+		public void destroyItem(View arg0, int arg1, Object arg2) {
 			((ViewPager) arg0).removeView(views.get(arg1));
 		}
 
 		@Override
-		public void finishUpdate(View arg0)
-		{
+		public void finishUpdate(View arg0) {
 
 		}
 
 		@Override
-		public int getCount()
-		{
+		public int getCount() {
 			return views.size();
 		}
 
 		@Override
-		public Object instantiateItem(View arg0, int arg1)
-		{
+		public Object instantiateItem(View arg0, int arg1) {
 			((ViewPager) arg0).addView(views.get(arg1), 0);
 			return views.get(arg1);
 		}
 
 		@Override
-		public boolean isViewFromObject(View arg0, Object arg1)
-		{
+		public boolean isViewFromObject(View arg0, Object arg1) {
 			return arg0 == arg1;
 		}
 
 		@Override
-		public void restoreState(Parcelable arg0, ClassLoader arg1)
-		{
+		public void restoreState(Parcelable arg0, ClassLoader arg1) {
 
 		}
 
 		@Override
-		public Parcelable saveState()
-		{
+		public Parcelable saveState() {
 			return null;
 		}
 
 		@Override
-		public void startUpdate(View arg0)
-		{
+		public void startUpdate(View arg0) {
 
 		}
 
