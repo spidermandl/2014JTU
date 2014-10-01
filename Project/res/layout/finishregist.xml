@@ -14,7 +14,7 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/u186" />
 
         <TextView
@@ -44,8 +44,10 @@
 
             <EditText
                 android:id="@+id/username"
+                android:maxLength="10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="用户名" />
 
          
@@ -70,8 +72,10 @@
 
             <EditText
                 android:id="@+id/password"
+                 android:maxLength="10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="密码" />
 
            
@@ -96,8 +100,10 @@
 
             <EditText
                 android:id="@+id/password2"
+                 android:maxLength="10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="确认密码" />
 
             
@@ -115,26 +121,7 @@
         android:background="@drawable/u147" />
 
 
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="160dp"
-    >
-    <ImageView 
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/u190_line"
-        />
-    
-     <ImageView 
-         android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/u190_line"
-        />
-</LinearLayout>
+
 
 
 </LinearLayout>

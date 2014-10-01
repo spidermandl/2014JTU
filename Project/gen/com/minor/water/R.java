@@ -52,7 +52,9 @@ public final class R {
         public static final int go=0x7f070012;
         public static final int iv=0x7f070000;
         public static final int iv2=0x7f070006;
-        public static final int login=0x7f070013;
+        public static final int login=0x7f070015;
+        public static final int login_password=0x7f070014;
+        public static final int login_username=0x7f070013;
         public static final int ok=0x7f070009;
         public static final int password=0x7f07000c;
         public static final int password2=0x7f07000d;
