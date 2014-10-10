@@ -37,48 +37,63 @@ public final class R {
         public static final int nofocus=0x7f02000c;
         public static final int u143=0x7f02000d;
         public static final int u147=0x7f02000e;
-        public static final int u186=0x7f02000f;
-        public static final int u190_line=0x7f020010;
-        public static final int u191=0x7f020011;
-        public static final int u193=0x7f020012;
+        public static final int u157=0x7f02000f;
+        public static final int u186=0x7f020010;
+        public static final int u190_line=0x7f020011;
+        public static final int u191=0x7f020012;
+        public static final int u193=0x7f020013;
+        public static final int u244=0x7f020014;
     }
     public static final class id {
-        public static final int adv_pager=0x7f070010;
-        public static final int back=0x7f07000a;
+        public static final int adv_pager=0x7f070012;
+        public static final int back=0x7f07000c;
         public static final int button1=0x7f070008;
+        public static final int connect=0x7f07001b;
+        public static final int create_back=0x7f07000a;
         public static final int editText1=0x7f070005;
         public static final int et=0x7f070002;
-        public static final int finished=0x7f07000e;
-        public static final int go=0x7f070012;
+        public static final int finished=0x7f070010;
+        public static final int go=0x7f070014;
         public static final int iv=0x7f070000;
         public static final int iv2=0x7f070006;
-        public static final int login=0x7f070015;
-        public static final int login_password=0x7f070014;
-        public static final int login_username=0x7f070013;
+        public static final int login=0x7f070017;
+        public static final int login_password=0x7f070016;
+        public static final int login_username=0x7f070015;
+        public static final int next=0x7f07000b;
         public static final int ok=0x7f070009;
-        public static final int password=0x7f07000c;
-        public static final int password2=0x7f07000d;
-        public static final int progressBar1=0x7f07000f;
+        public static final int password=0x7f07000e;
+        public static final int password2=0x7f07000f;
+        public static final int previous=0x7f07001a;
+        public static final int progressBar1=0x7f070011;
         public static final int register=0x7f070003;
         public static final int text=0x7f070001;
         public static final int textView1=0x7f070004;
         public static final int textView2=0x7f070007;
-        public static final int username=0x7f07000b;
-        public static final int viewGroup=0x7f070011;
+        public static final int username=0x7f07000d;
+        public static final int viewGroup=0x7f070013;
+        public static final int wifiname=0x7f070018;
+        public static final int wifipwd=0x7f070019;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_main2=0x7f030001;
         public static final int activity_main3=0x7f030002;
-        public static final int finishregist=0x7f030003;
-        public static final int loading=0x7f030004;
-        public static final int login=0x7f030005;
-        public static final int login2=0x7f030006;
-        public static final int logo=0x7f030007;
-        public static final int success=0x7f030008;
+        public static final int createhouse=0x7f030003;
+        public static final int finishregist=0x7f030004;
+        public static final int loading=0x7f030005;
+        public static final int loading2=0x7f030006;
+        public static final int login=0x7f030007;
+        public static final int login2=0x7f030008;
+        public static final int logo=0x7f030009;
+        public static final int mainhouse=0x7f03000a;
+        public static final int success=0x7f03000b;
+        public static final int wifiitem=0x7f03000c;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+        public static final int createhouse1=0x7f050002;
+        public static final int createhouse2=0x7f050003;
+        public static final int nextstep=0x7f050001;
     }
     public static final class style {
         /** 

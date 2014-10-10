@@ -6,6 +6,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,11 @@
           <activity
             android:name="com.minor.water.LogoActivity"
             android:label="@string/app_name" >
-           
+              <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity 
             android:name="com.minor.water.GuideActivity"
@@ -40,11 +46,7 @@
         <activity 
             android:name="com.minor.water.LoginActivity"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+           
         </activity>
         <activity 
             android:name="com.minor.water.MainActivity"
@@ -55,7 +57,17 @@
         <activity 
             android:name="com.minor.water.MainActivity3"
             ></activity>
-
+         <activity 
+            android:name="com.minor.water.CreateHouseActivity"
+            >
+           
+         </activity>
+         <activity 
+            android:name="com.minor.water.WiFiActivity"
+            ></activity>
+          <activity 
+            android:name="com.minor.water.MainHouseActivity"
+            ></activity>
     </application>
 
 </manifest>

@@ -64,22 +64,25 @@ private SharedPreferences sp = null;//声明一个SharedPreferences
 				View view = inflater.inflate(R.layout.loading, null);
 				AlertDialog.Builder builder2 = new AlertDialog.Builder(FinishRegistActivity.this);
 				builder2.setView(view);
+				
 				builder2.show();
 				   Timer timer = new Timer();
 				   TimerTask task = new TimerTask(){
 
 					@Override
 					public void run() {
-						//builder2. 返回不可见进度条
+						///builder2.
 						//将用户名和密码存到SharedPreference中
 						Editor editor = sp.edit();
 						editor.putString("username", username.getText().toString());
 						editor.putString("password", password.getText().toString());
 						editor.commit();
+						//dismissDialog(R.layout.loading);
                           Intent intent = new Intent(FinishRegistActivity.this,SuccessActivity.class);						
 				          startActivity(intent);			          
 					}					   
 				   };
+				  
 				   timer.schedule(task, 1000*3);
 			}
 			
