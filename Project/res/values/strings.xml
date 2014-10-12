@@ -1,5 +1,7 @@
 <resources>
 
     <string name="app_name">Project</string>
-
+    <string name="nextstep">下一步</string>
+    <string name="createhouse1">添加一个新设备到Wi-Fi网络创建你的家庭房间。</string>
+    <string name="createhouse2">请先长按空气净化器网络配置案件至指示灯快速闪烁状态。</string>
 </resources>

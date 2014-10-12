@@ -9,11 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
-<<<<<<< HEAD
-import android.app.Dialog;
-=======
 import android.app.AlertDialog;
->>>>>>> 5a80f4045c10b3566d805b9473b0ec2472207605
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -23,12 +19,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
-<<<<<<< HEAD
-import android.widget.ProgressBar;
-=======
 import android.widget.EditText;
 import android.widget.Toast;
->>>>>>> 5a80f4045c10b3566d805b9473b0ec2472207605
 
 public class FinishRegistActivity extends Activity implements OnClickListener {
 EditText username,password,password2;
@@ -45,12 +37,8 @@ private SharedPreferences sp = null;//声明一个SharedPreferences
 		password = (EditText) findViewById(R.id.password);
 		password2 = (EditText) findViewById(R.id.password2);
 		findViewById(R.id.finished).setOnClickListener(this);
-<<<<<<< HEAD
-		
-=======
 		findViewById(R.id.back).setOnClickListener(this);
 		sp = getSharedPreferences(FILE, MODE_PRIVATE);
->>>>>>> 5a80f4045c10b3566d805b9473b0ec2472207605
 	}
 
 	@Override
@@ -76,22 +64,25 @@ private SharedPreferences sp = null;//声明一个SharedPreferences
 				View view = inflater.inflate(R.layout.loading, null);
 				AlertDialog.Builder builder2 = new AlertDialog.Builder(FinishRegistActivity.this);
 				builder2.setView(view);
+				
 				builder2.show();
 				   Timer timer = new Timer();
 				   TimerTask task = new TimerTask(){
 
 					@Override
 					public void run() {
-						//builder2. 返回不可见进度条
+						///builder2.
 						//将用户名和密码存到SharedPreference中
 						Editor editor = sp.edit();
 						editor.putString("username", username.getText().toString());
 						editor.putString("password", password.getText().toString());
 						editor.commit();
+						//dismissDialog(R.layout.loading);
                           Intent intent = new Intent(FinishRegistActivity.this,SuccessActivity.class);						
 				          startActivity(intent);			          
 					}					   
 				   };
+				  
 				   timer.schedule(task, 1000*3);
 			}
 			
