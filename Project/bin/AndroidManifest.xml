@@ -1,0 +1,69 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.minor.water"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.minor.water.LogoActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.minor.water.GuideActivity" >
+        </activity>
+        <activity
+            android:name="com.minor.water.Login2Activity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.minor.water.FinishRegistActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.minor.water.SuccessActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.minor.water.RoomMainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.minor.water.MainActivity" >
+        </activity>
+        <activity android:name="com.minor.water.MainActivity2" >
+        </activity>
+        <activity android:name="com.minor.water.MainActivity3" >
+        </activity>
+        <activity
+            android:name=".RoomSliderActivity"
+            android:theme="@style/Dialog" >
+        </activity>
+        <!--
+             <activity 
+            android:name=".RoomMainActivity"
+            ></activity>
+        -->
+          <activity 
+            android:name=".ProvinceActivity"
+            ></activity>
+        <activity 
+            android:name=".WeatherActivity"
+            ></activity>
+            <activity 
+            android:name=".CityActivity"
+            ></activity>
+
+    </application>
+
+</manifest>
