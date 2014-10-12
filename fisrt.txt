@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-aaaaaaaaaichenho
-=======
-aaaaaaaaa
-
-bbbbbbb
->>>>>>> 2a2e45e9a707b5c07cdef946ed8d243b669938fa
