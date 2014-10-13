@@ -48,7 +48,7 @@ public class GuideActivity extends Activity
 	
 	
 	public void register(View v){
-		Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+		Intent intent=new Intent(getApplicationContext(), RegisterActivity.class);
 		startActivity(intent);
 	}
 

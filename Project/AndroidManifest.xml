@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.minor.water"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,35 +16,35 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.minor.water.LogoActivity"
+            android:name=".LogoActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="com.minor.water.GuideActivity" >
+        <activity android:name=".GuideActivity" >
         </activity>
         <activity
-            android:name="com.minor.water.Login2Activity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.minor.water.FinishRegistActivity"
+            android:name=".Login2Activity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.minor.water.SuccessActivity"
+            android:name=".FinishRegistActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="com.minor.water.RoomMainActivity" >
+        <activity
+            android:name=".SuccessActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name=".RoomMainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.minor.water.MainActivity" >
+        <activity android:name=".RegisterActivity" >
         </activity>
-        <activity android:name="com.minor.water.MainActivity2" >
+        <activity android:name=".VerifyActivity" >
         </activity>
-        <activity android:name="com.minor.water.MainActivity3" >
+        <activity android:name=".VerifySuccessActivity" >
         </activity>
         <activity
             android:name=".RoomSliderActivity"
@@ -52,18 +53,18 @@
         <!--
              <activity 
             android:name=".RoomMainActivity"
-            ></activity>
+            ></activity>
         -->
-          <activity 
-            android:name=".ProvinceActivity"
-            ></activity>
-        <activity 
-            android:name=".WeatherActivity"
-            ></activity>
-            <activity 
-            android:name=".CityActivity"
-            ></activity>
-
+        <activity android:name=".ProvinceActivity" >
+        </activity>
+        <activity android:name=".WeatherActivity" >
+        </activity>
+        <activity android:name=".CityActivity" >
+        </activity>
+        <activity
+            android:name=".ChangeCityActivity"
+            android:label="@string/title_activity_change_city" >
+        </activity>
     </application>
 
 </manifest>

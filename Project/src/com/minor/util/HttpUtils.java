@@ -23,6 +23,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.StrictMode;
@@ -146,11 +147,12 @@ public class HttpUtils {
 	 * @param paramsArray
 	 *            参数
 	 * @param values
-	 *            �?
+	 *            �?
 	 * @param charset
 	 *            编码，例如：UTF-8、GBK
 	 * @return
 	 */
+	@SuppressLint("NewApi")
 	public static String postUrl(String url, String[] paramsArray,
 			String[] values, String charset) {
 		String returnConnection = null;
@@ -165,7 +167,7 @@ public class HttpUtils {
 				parmas.put(paramsArray[i], values[i]);
 			}
 
-			DefaultHttpClient client = new DefaultHttpClient();// http客户�?
+			DefaultHttpClient client = new DefaultHttpClient();// http客户�?
 			HttpPost httpPost = new HttpPost(url);
 
 			List<BasicNameValuePair> pairs = new ArrayList<BasicNameValuePair>();
@@ -190,25 +192,25 @@ public class HttpUtils {
 					int statusCode = response.getStatusLine().getStatusCode();
 
 					if (statusCode != HttpStatus.SC_OK) {
-						System.out.println("错误代码�?  " + statusCode);
+						System.out.println("错误代码�?  " + statusCode);
 					} else {
 						HttpEntity entity = response.getEntity();
 						InputStream content = entity.getContent();
 						returnConnection = changeInputStream(content);
 						// returnConnection = content.toString();//
 						// changeInputStream(content);
-						System.out.println("结果2�?" + returnConnection);
+						System.out.println("结果2�?" + returnConnection);
 					}
 				} catch (IllegalStateException e) {
 					e.printStackTrace();
-					System.out.println("出错1�?" + e.getStackTrace());
+					System.out.println("出错1�?" + e.getStackTrace());
 				} catch (IOException e) {
 					e.printStackTrace();
-					System.out.println("出错2�?" + e.getStackTrace());
+					System.out.println("出错2�?" + e.getStackTrace());
 				}
 			}
 		} else {
-			System.out.println("出错3：参数不�?");
+			System.out.println("出错3：参数不�?");
 		}
 		return returnConnection;
 	}
