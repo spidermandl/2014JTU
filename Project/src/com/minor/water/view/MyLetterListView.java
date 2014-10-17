@@ -5,47 +5,54 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.text.style.TypefaceSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class MyLetterListView extends View {
+public class MyLetterListView extends View
+{
 
 	OnTouchingLetterChangedListener onTouchingLetterChangedListener;
-	String[] b = { "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-			"L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-			"Y", "Z" };
+	String[] b = { "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 	int choose = -1;
 	Paint paint = new Paint();
 	boolean showBkg = false;
 
-	public MyLetterListView(Context context, AttributeSet attrs, int defStyle) {
+	public MyLetterListView(Context context, AttributeSet attrs, int defStyle)
+	{
 		super(context, attrs, defStyle);
 	}
 
-	public MyLetterListView(Context context, AttributeSet attrs) {
+	public MyLetterListView(Context context, AttributeSet attrs)
+	{
 		super(context, attrs);
 	}
 
-	public MyLetterListView(Context context) {
+	public MyLetterListView(Context context)
+	{
 		super(context);
 	}
 
 	@Override
-	protected void onDraw(Canvas canvas) {
+	protected void onDraw(Canvas canvas)
+	{
 		super.onDraw(canvas);
-		if (showBkg) {
-			canvas.drawColor(Color.parseColor("#10000000"));
+		if (showBkg)
+		{
+			canvas.drawColor(Color.parseColor("#40000000"));
 		}
+
 		int height = getHeight();
 		int width = getWidth();
 		int singleHeight = height / b.length;
-		for (int i = 0; i < b.length; i++) {
-			paint.setColor(Color.parseColor("#515151"));
+		for (int i = 0; i < b.length; i++)
+		{
+			paint.setColor(Color.WHITE);
 			paint.setTypeface(Typeface.DEFAULT_BOLD);
 			paint.setAntiAlias(true);
-			if (i == choose) {
+			paint.setTextSize(25);
+			if (i == choose)
+			{
 				paint.setColor(Color.parseColor("#3399ff"));
 				paint.setFakeBoldText(true);
 			}
@@ -58,17 +65,21 @@ public class MyLetterListView extends View {
 	}
 
 	@Override
-	public boolean dispatchTouchEvent(MotionEvent event) {
+	public boolean dispatchTouchEvent(MotionEvent event)
+	{
 		final int action = event.getAction();
 		final float y = event.getY();
 		final int oldChoose = choose;
 		final OnTouchingLetterChangedListener listener = onTouchingLetterChangedListener;
 		final int c = (int) (y / getHeight() * b.length);
+
 		switch (action) {
 		case MotionEvent.ACTION_DOWN:
 			showBkg = true;
-			if (oldChoose != c && listener != null) {
-				if (c >= 0 && c <= b.length) {
+			if (oldChoose != c && listener != null)
+			{
+				if (c > 0 && c < b.length)
+				{
 					listener.onTouchingLetterChanged(b[c]);
 					choose = c;
 					invalidate();
@@ -77,8 +88,10 @@ public class MyLetterListView extends View {
 
 			break;
 		case MotionEvent.ACTION_MOVE:
-			if (oldChoose != c && listener != null) {
-				if (c >= 0 && c <= b.length) {
+			if (oldChoose != c && listener != null)
+			{
+				if (c > 0 && c < b.length)
+				{
 					listener.onTouchingLetterChanged(b[c]);
 					choose = c;
 					invalidate();
@@ -95,16 +108,18 @@ public class MyLetterListView extends View {
 	}
 
 	@Override
-	public boolean onTouchEvent(MotionEvent event) {
+	public boolean onTouchEvent(MotionEvent event)
+	{
 		return super.onTouchEvent(event);
 	}
 
-	public void setOnTouchingLetterChangedListener(
-			OnTouchingLetterChangedListener onTouchingLetterChangedListener) {
+	public void setOnTouchingLetterChangedListener(OnTouchingLetterChangedListener onTouchingLetterChangedListener)
+	{
 		this.onTouchingLetterChangedListener = onTouchingLetterChangedListener;
 	}
 
-	public interface OnTouchingLetterChangedListener {
+	public interface OnTouchingLetterChangedListener
+	{
 		public void onTouchingLetterChanged(String s);
 	}
 
